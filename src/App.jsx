@@ -4,14 +4,17 @@ const NavBar = styled.nav`
 	background-color: #ef491f;
 	text-transform: uppercase;
 	font-weight: 900;
-	height: 5rem;
-	place-content: center;
+	height: 6rem;
 
 	.nav-wrapper {
+		box-sizing: content-box;
 		max-width: 1100px;
 		display: flex;
 		flex-direction: row;
-		margin: 0 auto;
+		margin: 0 auto 0 auto; //-3px for border bottom
+		height: 100%;
+		place-items: center;
+		border-bottom: 5px solid black;
 	}
 
 	.logo-wrapper {
@@ -39,12 +42,15 @@ const NavBar = styled.nav`
 
 const Hero = styled.main`
 	background-color: #ef491f;
-	padding-top: 5rem;
+	margin-top: 5rem;
 	.hero-wrapper {
 		max-width: 1100px;
 		display: flex;
 		flex-direction: row;
 		margin: 0 auto;
+		padding-bottom: 5rem; // todo: remove this when adding more components after Hero - used for temporary space for the borderbottom line
+
+		border-bottom: 5px solid black;
 	}
 
 	.hero-grid {
@@ -79,18 +85,37 @@ const Hero = styled.main`
 				width: fit-content;
 				margin-top: 3rem;
 				font-weight: 700;
+				border-radius: 0.5rem;
+				border: 5px solid black;
+				transition: all 0.1s ease-out;
+
+				&:hover {
+					filter: drop-shadow(9px 11px 0px #000000);
+					color: black;
+					background-color: white;
+				}
 			}
 		}
 
 		.hero-grid-right {
 			display: flex;
-			.hero-wrapper {
+			.hero-img-wrapper {
 			}
 			img {
+				transition: all 0.1s ease-out;
+				box-sizing: border-box;
+				border: 0.5rem solid black;
+
+				&:hover {
+					cursor: pointer;
+					border: 0.5rem solid white;
+					transform: translateX(-5px) translateY(-5px);
+					filter: drop-shadow(20px 20px 0px #000000);
+				}
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				border-radius: 2rem;
+				border-radius: 1rem;
 			}
 		}
 	}
@@ -131,7 +156,7 @@ function App() {
 
 						{/* HERO RIGHT */}
 						<div className='hero-grid-right'>
-							<div className='hero-wrapper'>
+							<div className='hero-img-wrapper'>
 								<img src={HeroImage} alt='' />
 							</div>
 						</div>
