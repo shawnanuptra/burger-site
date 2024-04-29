@@ -1,5 +1,5 @@
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: "Oswald", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 
@@ -17,5 +17,5 @@ body {
 	display: block;
 	box-sizing: border-box;
 	min-height: 100vh;
-	background-color: #ef491f;
+	background-color: #ff8c49;
 }
