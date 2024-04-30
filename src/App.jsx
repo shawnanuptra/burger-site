@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import HeroImage from "./assets/hero.jpg";
+import { device } from "./constants";
 
 const NavBar = styled.nav`
 	background-color: #ff8c49;
@@ -54,6 +55,52 @@ const NavBar = styled.nav`
 					cursor: pointer;
 					filter: drop-shadow(5px 5px 0px #000000);
 				}
+			}
+		}
+	}
+
+	// mobile
+	@media ${device.sm} {
+		/* hides the menu until toggle (?) */
+		.nav-wrapper {
+			position: relative;
+			max-width: 300px;
+
+			/* background-color: white; */
+		}
+		.nav-menu {
+			display: none;
+		}
+		.nav-menu.open {
+			background-color: white;
+			position: absolute;
+			display: flex;
+			width: 100%;
+			top: 6rem;
+			ul {
+				flex-direction: column;
+				place-items: center;
+
+				li {
+				}
+			}
+		}
+
+		.nav-hamburger-wrapper.open {
+			.line {
+				transition: all 0.1s ease-in;
+				transform-origin: left center;
+			}
+			.top-line {
+				rotate: 45deg;
+				translate: 0 -4px;
+			}
+			.middle-line {
+				display: none;
+			}
+			.bot-line {
+				rotate: -45deg;
+				translate: 0 4px;
 			}
 		}
 	}
@@ -148,14 +195,58 @@ const Hero = styled.main`
 			}
 		}
 	}
+
+	@media ${device.sm} {
+		.hero-wrapper {
+			display: none;
+		}
+	}
 `;
 function App() {
+	const handleClick = () => {
+		// toggle
+		let el = document.getElementsByClassName("nav-menu").item(0);
+
+		if (el.matches(".open")) {
+			//close
+			el.classList.remove("open");
+			document
+				.getElementsByClassName("nav-hamburger-wrapper")
+				.item(0)
+				.classList.remove("open");
+		} else {
+			el.classList.add("open");
+			document
+				.getElementsByClassName("nav-hamburger-wrapper")
+				.item(0)
+				.classList.add("open");
+		}
+	};
 	return (
 		<>
 			<NavBar>
 				<div className='nav-wrapper'>
 					<div className='logo-wrapper'>
 						<span className='logo'>SAM'S</span>
+					</div>
+					<div className='nav-hamburger-wrapper' onClick={handleClick}>
+						<svg
+							xmlns='http://www.w3.org/2000/svg'
+							width='24'
+							height='24'
+							viewBox='0 0 24 24'
+							fill='none'
+							stroke='currentColor'
+							stroke-width='2'
+							stroke-linecap='round'
+							stroke-linejoin='round'
+							class='icon icon-tabler icons-tabler-outline icon-tabler-menu-2'
+						>
+							<path stroke='none' d='M0 0h24v24H0z' fill='none' />
+							<path className='line top-line' d='M4 6l16 0' />
+							<path className='line middle-line' d='M4 12l16 0' />
+							<path className='line bot-line' d='M4 18l16 0' />
+						</svg>
 					</div>
 					<div className='nav-menu'>
 						<ul>
