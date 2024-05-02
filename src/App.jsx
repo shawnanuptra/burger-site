@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import HeroImage from "./assets/hero.jpg";
 import { device } from "./constants";
+import Introduction from "./Introduction";
 
 const NavBar = styled.nav`
 	background-color: #ff8c49;
@@ -60,6 +61,10 @@ const NavBar = styled.nav`
 		}
 	}
 
+	.nav-hamburger-wrapper {
+		display: none;
+	}
+
 	// mobile
 	@media ${device.sm} {
 		/* hides the menu until toggle (?) */
@@ -90,6 +95,7 @@ const NavBar = styled.nav`
 		}
 
 		.nav-hamburger-wrapper {
+			display: block;
 			overflow: visible;
 			svg {
 				overflow: visible;
@@ -118,15 +124,12 @@ const NavBar = styled.nav`
 
 const Hero = styled.main`
 	background-color: #ff8c49;
-	margin-top: 5rem;
+	margin: 10rem 0;
 	.hero-wrapper {
 		max-width: 1100px;
 		display: flex;
 		flex-direction: row;
 		margin: 0 auto;
-		padding-bottom: 5rem; // todo: remove this when adding more components after Hero - used for temporary space for the borderbottom line
-
-		border-bottom: 5px solid black;
 	}
 
 	.hero-grid {
@@ -326,6 +329,7 @@ function App() {
 					</div>
 				</div>
 			</Hero>
+			<Introduction />
 		</>
 	);
 }
