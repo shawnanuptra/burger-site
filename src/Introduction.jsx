@@ -44,6 +44,11 @@ const Wrapper = styled.section`
 			margin: 0;
 			z-index: 1;
 
+			h2,
+			.subtitle {
+				display: none;
+			}
+
 			img {
 				filter: grayscale(1) brightness(0.6);
 				width: 100%;
