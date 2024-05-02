@@ -13,7 +13,8 @@ const NavBar = styled.nav`
 		max-width: 1100px;
 		display: flex;
 		flex-direction: row;
-		margin: 0 auto 0 auto; //-3px for border bottom
+		margin: 0 auto;
+		padding: 0 3vw; //-3px for border bottom
 		height: 100%;
 		place-items: center;
 		border-bottom: 5px solid black;
@@ -78,6 +79,7 @@ const NavBar = styled.nav`
 			display: flex;
 			width: 100%;
 			top: 6rem;
+			left: 0;
 			ul {
 				flex-direction: column;
 				place-items: center;
@@ -221,6 +223,8 @@ const Hero = styled.main`
 				}
 				h1 {
 					font-size: 3rem;
+					-webkit-text-stroke: 3px black;
+					text-shadow: 4px 4px black;
 				}
 			}
 
