@@ -13,6 +13,14 @@ const Wrapper = styled.div`
 	border: 10px solid #ffed49;
 	outline: 4px solid black;
 	filter: drop-shadow(5px 5px 0px #000000);
+	transition: all 0.1s ease-in;
+
+	&:hover {
+		cursor: pointer;
+		border-color: white;
+		transform: translateX(-5px) translateY(-5px);
+		filter: drop-shadow(20px 20px 0px black);
+	}
 
 	.card-img {
 		img {
