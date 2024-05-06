@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import BurgerCards from "./components/BurgerCards";
+import { device } from "./constants";
 
 const Wrapper = styled.section`
 	background-color: #ff8c49;
@@ -36,6 +37,26 @@ const Wrapper = styled.section`
 		width: 100%;
 		justify-content: space-between;
 		flex-wrap: wrap;
+	}
+
+	@media ${device.sm} {
+		.container {
+			text-align: center;
+			padding: 5vh 10vw;
+			h2 {
+				text-align: center;
+				font-size: 3rem;
+				-webkit-text-stroke: 3px black;
+				text-shadow: 4px 4px black;
+				margin-bottom: 2rem;
+			}
+			p {
+				font-size: 1.2rem;
+			}
+			.cards {
+				justify-content: center;
+			}
+		}
 	}
 `;
 
