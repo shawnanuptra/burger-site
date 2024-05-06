@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SVG from "../assets/star.svg";
+import { device } from "../constants";
 const Wrapper = styled.div`
 	border: 0.5rem solid orange;
 	background: white;
@@ -21,6 +22,16 @@ const Wrapper = styled.div`
 	}
 	.rating {
 		font-size: 1.2rem;
+	}
+
+	@media ${device.sm} {
+		.description {
+			font-size: 1.3rem;
+		}
+
+		.rating {
+			font-size: 1rem;
+		}
 	}
 `;
 function ReviewCards({ name, rating, description }) {

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Container from "./components/Container";
 import ReviewCards from "./components/ReviewCards";
+import { device } from "./constants";
 
 const Wrapper = styled.section`
 	background-color: white;
@@ -20,6 +21,19 @@ const Wrapper = styled.section`
 	.reviews-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	@media ${device.sm} {
+		.reviews-grid {
+			display: flex;
+			flex-direction: column;
+		}
+
+		h2 {
+			font-size: 3rem;
+			-webkit-text-stroke: 3px black;
+			text-shadow: 4px 4px black;
+		}
 	}
 `;
 

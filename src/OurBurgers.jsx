@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BurgerCards from "./components/BurgerCards";
 import { device } from "./constants";
+import Container from "./components/Container";
 
 const Wrapper = styled.section`
 	background-color: #ff8c49;
