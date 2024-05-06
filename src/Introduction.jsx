@@ -95,7 +95,15 @@ const Wrapper = styled.section`
 			}
 
 			.text {
-				display: none;
+				display: block;
+				h2 {
+					font-size: 2.5rem;
+				}
+				.subtitle {
+					font-size: 1.5rem;
+					text-transform: none;
+					font-weight: 500;
+				}
 			}
 			.img-wrapper {
 				/* flex: 1 1 0px; */
@@ -108,9 +116,7 @@ const Wrapper = styled.section`
 					border-radius: 0.8rem;
 				}
 				figcaption {
-					margin: 0.5rem 0 2rem 0;
-					text-align: center;
-					font-size: 1rem;
+					display: none;
 				}
 			}
 		}
