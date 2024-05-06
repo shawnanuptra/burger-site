@@ -12,6 +12,7 @@ const ContainerStyle = styled.div`
 	@media ${device.sm} {
 		text-align: center;
 		padding: 10vh 10vw;
+		margin: 2rem auto;
 	}
 `;
 function Container({ children }) {

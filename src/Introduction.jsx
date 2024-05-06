@@ -1,17 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { device } from "./constants";
+import Container from "./components/Container";
 
 const Wrapper = styled.section`
 	background-color: white;
 	.container {
-		max-width: 1100px;
 		display: flex;
 		flex-direction: row;
-		margin: 0 auto;
-		padding: 20rem 0;
-		gap: 3rem;
 		align-items: center;
+		gap: 1rem;
 
 		h2 {
 			color: #ff8c49;
@@ -64,12 +62,8 @@ const Wrapper = styled.section`
 
 	@media ${device.sm} {
 		.container {
-			padding: 5rem 10vw;
 			display: flex;
 			flex-direction: column-reverse;
-			margin: 2rem auto;
-			gap: 1rem;
-			text-align: center;
 
 			h2 {
 				color: #ff8c49;
@@ -125,27 +119,29 @@ const Wrapper = styled.section`
 function Introduction() {
 	return (
 		<Wrapper>
-			<div className='container'>
-				<div className='text'>
-					<h2>Hi, we're sam's Burgers.</h2>
-					<span className='subtitle'>
-						A collective of creators who love burger and good mood.
-					</span>
+			<Container>
+				<div className='container'>
+					<div className='text'>
+						<h2>Hi, we're sam's Burgers.</h2>
+						<span className='subtitle'>
+							A collective of creators who love burger and good mood.
+						</span>
+					</div>
+					<figure className='img-wrapper'>
+						<h2>Hi, we're sam's burgers.</h2>
+						<img
+							src='https://media.istockphoto.com/id/1333388037/photo/two-guys-grilling-at-backyard.jpg?s=612x612&w=0&k=20&c=N229r30b-BDhV6qtTnOAr2pj5Q500mSn2opm4YNQZ-U='
+							alt=''
+						/>
+						<figcaption>
+							This is Sam. He started everything 20 years ago.
+						</figcaption>
+						<span className='subtitle'>
+							A collective of creators who love burger and good mood.
+						</span>
+					</figure>
 				</div>
-				<figure className='img-wrapper'>
-					<h2>Hi, we're sam's burgers.</h2>
-					<img
-						src='https://media.istockphoto.com/id/1333388037/photo/two-guys-grilling-at-backyard.jpg?s=612x612&w=0&k=20&c=N229r30b-BDhV6qtTnOAr2pj5Q500mSn2opm4YNQZ-U='
-						alt=''
-					/>
-					<figcaption>
-						This is Sam. He started everything 20 years ago.
-					</figcaption>
-					<span className='subtitle'>
-						A collective of creators who love burger and good mood.
-					</span>
-				</figure>
-			</div>
+			</Container>
 		</Wrapper>
 	);
 }
