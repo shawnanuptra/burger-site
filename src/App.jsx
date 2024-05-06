@@ -3,6 +3,7 @@ import HeroImage from "./assets/hero.jpg";
 import { device } from "./constants";
 import Introduction from "./Introduction";
 import OurBurgers from "./OurBurgers";
+import Reviews from "./Reviews";
 
 const NavBar = styled.nav`
 	background-color: #ff8c49;
@@ -332,6 +333,7 @@ function App() {
 			</Hero>
 			<Introduction />
 			<OurBurgers />
+			<Reviews />
 		</>
 	);
 }
