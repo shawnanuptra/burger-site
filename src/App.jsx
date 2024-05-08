@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HeroImage from "./assets/hero.jpg";
+import Footer from "./Footer";
 import { device } from "./constants";
 import Introduction from "./Introduction";
 import OurBurgers from "./OurBurgers";
@@ -359,6 +359,7 @@ function App() {
 			<Introduction />
 			<OurBurgers />
 			<Reviews />
+			<Footer />
 		</>
 	);
 }
