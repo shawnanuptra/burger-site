@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Facebook from "./assets/facebook.svg";
 import Twitter from "./assets/Twitter.svg";
 import Instagram from "./assets/Instagram.svg";
+import { device } from "./constants";
 
 const Wrapper = styled.div`
 	box-sizing: content-box;
@@ -51,6 +52,19 @@ const Wrapper = styled.div`
 				background-color: white;
 			}
 		}
+	}
+
+	@media ${device.sm} {
+		grid-template-columns: 1fr;
+		padding: 1rem 2rem 2rem 2rem;
+		h2 {
+			font-size: 1.5rem;
+		}
+		p {
+			margin: 0.1rem;
+		}
+
+		gap: 1rem;
 	}
 `;
 
