@@ -10,6 +10,7 @@ const NavBar = styled.nav`
 	text-transform: uppercase;
 	font-weight: 900;
 	height: 6rem;
+	position: relative;
 
 	.nav-wrapper {
 		box-sizing: content-box;
@@ -21,6 +22,7 @@ const NavBar = styled.nav`
 		height: 100%;
 		place-items: center;
 		border-bottom: 5px solid black;
+		z-index: 2;
 	}
 
 	.logo-wrapper {
@@ -120,6 +122,20 @@ const NavBar = styled.nav`
 				rotate: -45deg;
 				translate: 0 4px;
 			}
+		}
+
+		.background {
+			display: none;
+		}
+
+		.background.open {
+			display: block;
+			background-color: white;
+			position: absolute;
+			top: 0;
+			width: 100vw;
+			height: 100vh;
+			z-index: 1;
 		}
 	}
 `;
@@ -257,10 +273,18 @@ function App() {
 				.getElementsByClassName("nav-hamburger-wrapper")
 				.item(0)
 				.classList.remove("open");
+			document
+				.getElementsByClassName("background")
+				.item(0)
+				.classList.remove("open");
 		} else {
 			el.classList.add("open");
 			document
 				.getElementsByClassName("nav-hamburger-wrapper")
+				.item(0)
+				.classList.add("open");
+			document
+				.getElementsByClassName("background")
 				.item(0)
 				.classList.add("open");
 		}
@@ -300,6 +324,7 @@ function App() {
 						</ul>
 					</div>
 				</div>
+				<div className='background'></div>
 			</NavBar>
 			<Hero>
 				<div className='hero-wrapper'>
